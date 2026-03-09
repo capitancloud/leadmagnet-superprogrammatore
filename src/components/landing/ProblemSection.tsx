@@ -12,7 +12,7 @@ const ProblemSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
             Il Vecchio Modo vs. <span className="text-primary text-glow">Il Super Potere</span>
           </h2>
         </motion.div>
