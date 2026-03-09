@@ -1,6 +1,7 @@
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import ProblemSection from "@/components/landing/ProblemSection";
+import ChallengeSection from "@/components/landing/ChallengeSection";
 import FutureSection from "@/components/landing/FutureSection";
 import SocialProofSection from "@/components/landing/SocialProofSection";
 import LeadMagnetSection from "@/components/landing/LeadMagnetSection";
@@ -12,6 +13,7 @@ const Index = () => {
       <HeroSection />
       <FeaturesSection />
       <ProblemSection />
+      <ChallengeSection />
       <FutureSection />
       <SocialProofSection />
       <LeadMagnetSection />
