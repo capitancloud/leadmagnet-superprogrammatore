@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Rocket } from "lucide-react";
-import { ArrowRight, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
