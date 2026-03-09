@@ -17,7 +17,7 @@ const LeadMagnetSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
             Pronto ad <span className="text-primary text-glow">Accettare la Sfida?</span>
           </h2>
           <p className="text-muted-foreground text-lg">
