@@ -27,62 +27,60 @@ const LeadMagnetSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Lezione Gratuita */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-2xl border border-border/50 bg-card p-8 text-center flex flex-col justify-between"
+            className="rounded-2xl border border-primary/20 bg-gradient-to-br from-card to-primary/5 p-8 text-center flex flex-col justify-between hover:border-primary/40 transition-colors duration-300"
           >
             <div>
-              <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-7 h-7 text-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
+                <Zap className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Lezione Gratuita</h3>
-              <p className="text-muted-foreground text-sm mb-6">
-                Guarda come creo una web app completa in meno di 10 minuti. Zero costi, zero impegno.
+              <h3 className="text-2xl font-bold mb-3">🎯 Accetta la Sfida</h3>
+              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                Guarda come creo una web app completa in meno di 10 minuti. 
+                Zero costi, zero impegno — solo pura dimostrazione.
               </p>
             </div>
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="w-full h-14 text-base font-bold rounded-xl border-primary/40 text-primary hover:bg-primary/10 transition-all duration-300 group"
+              className="w-full h-14 text-base font-bold rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group"
             >
               <a href="https://example.com/lezione" target="_blank" rel="noopener noreferrer">
                 Guarda la Lezione Gratuita
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <p className="text-xs text-muted-foreground mt-3">🎓 100% Gratuito</p>
+            <p className="text-xs text-muted-foreground mt-3">🎓 100% Gratuito • Nessun impegno</p>
           </motion.div>
 
           {/* Super Programmatore */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="rounded-2xl border border-primary/30 bg-card p-8 text-center flex flex-col justify-between glow-yellow relative overflow-hidden"
+            className="rounded-2xl border border-accent/30 bg-gradient-to-br from-card to-accent/5 p-8 text-center flex flex-col justify-between hover:border-accent/50 transition-colors duration-300"
           >
-            <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
-              CONSIGLIATO
-            </div>
             <div>
-              <div className="w-14 h-14 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center mx-auto mb-4">
-                <Rocket className="w-7 h-7 text-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center mx-auto mb-5">
+                <Rocket className="w-8 h-8 text-accent-foreground" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Sono Pronto!</h3>
-              <p className="text-muted-foreground text-sm mb-6">
-                Voglio diventare un Super Programmatore con il Super Potere dell'AI. Accedi al percorso completo.
+              <h3 className="text-2xl font-bold mb-3">🚀 Sono Pronto!</h3>
+              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                Voglio diventare un Super Programmatore con il Super Potere dell'AI. 
+                Accedi direttamente al percorso completo.
               </p>
             </div>
             <Button
               asChild
               size="lg"
-              className="w-full h-14 text-base font-bold rounded-xl glow-yellow hover:glow-yellow-strong transition-all duration-300 group"
+              className="w-full h-14 text-base font-bold rounded-xl bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 group"
             >
               <a href="https://example.com/super-programmatore" target="_blank" rel="noopener noreferrer">
                 Diventa Super Programmatore!
