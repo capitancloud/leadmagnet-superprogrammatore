@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import EmailCaptureDialog from "@/components/EmailCaptureDialog";
 
 const LeadMagnetSection = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   return (
     <section id="lead-magnet" className="py-24 px-4 relative">
       <div className="absolute inset-0">
@@ -43,18 +47,18 @@ const LeadMagnetSection = () => {
             Zero costi, zero impegno — solo pura dimostrazione.
           </p>
           <Button
-            asChild
+            onClick={() => setDialogOpen(true)}
             size="lg"
             className="w-full h-14 text-base font-bold rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group"
           >
-            <a href="https://studenti.accademiadelcloud.it/p/web-app-in-10-minuti" target="_blank" rel="noopener noreferrer">
-              <span className="leading-none">Guarda la Lezione Gratuita</span>
-              <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <span className="leading-none">Guarda la Lezione Gratuita</span>
+            <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
           </Button>
           <p className="text-xs text-muted-foreground mt-3">🎓 100% Gratuito • Nessun impegno</p>
         </motion.div>
       </div>
+
+      <EmailCaptureDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };
