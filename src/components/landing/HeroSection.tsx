@@ -79,13 +79,13 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto"
+          className="flex justify-center max-w-md mx-auto"
         >
           <a
             href="https://studenti.accademiadelcloud.it/p/web-app-in-10-minuti"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-2xl border border-primary/20 bg-gradient-to-br from-card to-primary/5 p-6 text-center flex flex-col items-center hover:border-primary/40 transition-colors duration-300 group"
+            className="rounded-2xl border border-primary/20 bg-gradient-to-br from-card to-primary/5 p-6 text-center flex flex-col items-center hover:border-primary/40 transition-colors duration-300 group w-full"
           >
             <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
               <Zap className="w-7 h-7 text-primary" />
@@ -102,29 +102,6 @@ const HeroSection = () => {
               <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
             </Button>
             <p className="text-xs text-muted-foreground mt-2">🎓 100% Gratuito</p>
-          </a>
-
-          <a
-            href="https://superprogrammatore.it"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl border border-primary/20 bg-gradient-to-br from-card to-primary/5 p-6 text-center flex flex-col items-center hover:border-primary/40 transition-colors duration-300 group"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
-              <Rocket className="w-7 h-7 text-primary" />
-            </div>
-            <h3 className="text-lg sm:text-xl font-bold mb-2">🚀 Scopri il Percorso Completo</h3>
-            <p className="text-muted-foreground text-xs sm:text-sm mb-4 leading-relaxed">
-              Diventa un Super Programmatore con il Super Potere dell'AI.
-            </p>
-            <Button
-              size="lg"
-              className="w-full h-12 text-sm sm:text-base font-bold rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 items-center"
-            >
-              <span className="leading-none">Diventa Super Programmatore!</span>
-              <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <p className="text-xs text-muted-foreground mt-2">🚀 Il percorso completo</p>
           </a>
         </motion.div>
 
