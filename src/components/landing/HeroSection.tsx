@@ -1,12 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import superProgrammatoreLogo from "@/assets/super-programmatore-logo.png";
+import EmailCaptureDialog from "@/components/EmailCaptureDialog";
 
 const HeroSection = () => {
-  const scrollToForm = () => {
-    document.getElementById("lead-magnet")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
@@ -74,18 +74,16 @@ const HeroSection = () => {
           <span className="text-foreground font-medium">Tutto questo senza scrivere una singola riga di codice "tradizionale".</span>
         </motion.p>
 
-        {/* CTA Cards */}
+        {/* CTA Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           className="flex justify-center max-w-md mx-auto"
         >
-          <a
-            href="https://studenti.accademiadelcloud.it/p/web-app-in-10-minuti"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl border border-primary/20 bg-gradient-to-br from-card to-primary/5 p-6 text-center flex flex-col items-center hover:border-primary/40 transition-colors duration-300 group w-full"
+          <div
+            onClick={() => setDialogOpen(true)}
+            className="rounded-2xl border border-primary/20 bg-gradient-to-br from-card to-primary/5 p-6 text-center flex flex-col items-center hover:border-primary/40 transition-colors duration-300 group w-full cursor-pointer"
           >
             <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4">
               <Zap className="w-7 h-7 text-primary" />
@@ -102,7 +100,7 @@ const HeroSection = () => {
               <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
             </Button>
             <p className="text-xs text-muted-foreground mt-2">🎓 100% Gratuito</p>
-          </a>
+          </div>
         </motion.div>
 
         {/* Corso title */}
@@ -120,6 +118,8 @@ const HeroSection = () => {
           </p>
         </motion.div>
       </div>
+
+      <EmailCaptureDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };

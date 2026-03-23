@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Code2, Globe, Users, Database, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import EmailCaptureDialog from "@/components/EmailCaptureDialog";
 
 const steps = [
   { icon: Sparkles, time: "0:00", label: "Descrivi la tua idea all'AI", desc: "Nessun codice. Solo parole." },
@@ -11,9 +13,10 @@ const steps = [
 ];
 
 const ChallengeSection = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   return (
     <section className="py-20 sm:py-28 px-4 relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/3 blur-[120px]" />
         <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[100px]" />
@@ -22,7 +25,6 @@ const ChallengeSection = () => {
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,11 +46,8 @@ const ChallengeSection = () => {
           </h2>
         </motion.div>
 
-        {/* Timeline */}
         <div className="relative max-w-2xl mx-auto mb-16">
-          {/* Vertical line */}
           <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
-
           {steps.map((step, i) => (
             <motion.div
               key={step.label}
@@ -58,12 +57,9 @@ const ChallengeSection = () => {
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="relative flex items-start gap-4 sm:gap-6 mb-8 last:mb-0 group"
             >
-              {/* Node */}
               <div className="relative z-10 flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-card border border-primary/30 flex items-center justify-center group-hover:border-primary/60 group-hover:glow-yellow transition-all duration-300">
                 <step.icon className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
               </div>
-
-              {/* Content */}
               <div className="pt-1 sm:pt-3">
                 <div className="flex items-center gap-3 mb-1">
                   <span className="text-xs font-mono text-primary/70 bg-primary/5 px-2 py-0.5 rounded-md border border-primary/10">
@@ -77,7 +73,6 @@ const ChallengeSection = () => {
           ))}
         </div>
 
-        {/* Impactful CTA */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -97,14 +92,12 @@ const ChallengeSection = () => {
             </p>
 
             <Button
-              asChild
+              onClick={() => setDialogOpen(true)}
               size="lg"
               className="h-14 sm:h-16 px-6 sm:px-12 text-sm sm:text-lg font-bold rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group glow-yellow w-full sm:w-auto"
             >
-              <a href="https://studenti.accademiadelcloud.it/p/web-app-in-10-minuti" target="_blank" rel="noopener noreferrer">
-                <span className="leading-none">Voglio Vedere con i Miei Occhi</span>
-                <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <span className="leading-none">Voglio Vedere con i Miei Occhi</span>
+              <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
             </Button>
 
             <p className="text-xs text-muted-foreground mt-4">
@@ -113,6 +106,8 @@ const ChallengeSection = () => {
           </div>
         </motion.div>
       </div>
+
+      <EmailCaptureDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };
